@@ -1,4 +1,9 @@
 # python-programming-51042-final-project
+
+UPDATE ON SUBMISSION:
+
+I have also included my Excel file outputs given that these are required as inputs in subsequent code and are produced as outputs initially and, hence, are an important part of my submission, especially to understand the state in which these are exported and then later formatted. 
+
 Final Project for Python Programming MPCS 51042 Class
 
 
