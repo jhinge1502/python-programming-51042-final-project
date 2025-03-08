@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Real Estate Market Trends Dashboard</title>
+    <style>
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .export-button {
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+        /* Container for map and table side by side */
+        .map-and-table {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            max-width: 1200px; /* limit total width */
+            margin-bottom: 40px;
+        }
+        .map-container {
+            flex: 0 0 auto;
+            margin-right: 20px;
+        }
+        .table-container {
+            flex: 0 0 auto;
+            max-width: 680px;
+            max-height: 600px; /* match the map's height */
+            overflow-y: auto;  /* scroll if table is taller than 600px */
+            overflow-x: auto;
+        }
+        .charts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .chart {
+            flex: 1;
+            min-width: 400px;
+            margin: 10px;
+        }
+        /* Basic table styling */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        .table th, .table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with title and export button -->
+    <div class="header-bar">
+        <h1>Real Estate Market Trends Dashboard</h1>
+        <a class="export-button" href="/download" target="_blank">Export Processed File</a>
+    </div>
+    
+    <!-- Container with map on the left and table on the right -->
+    <div class="map-and-table">
+        <div class="map-container">
+            {{ map_html|safe }}
+        </div>
+        <div class="table-container">
+            <h2>Typical Home Values by State</h2>
+            {{ table_html|safe }}
+        </div>
+    </div>
+    
+    <!-- Charts below -->
+    <div class="charts">
+        <div class="chart">
+            <h2>Home Price Inflation 2024 by State</h2>
+            {{ bar1_html|safe }}
+        </div>
+        <div class="chart">
+            <h2>Cumulative Home Price Inflation (2020-2024) by State</h2>
+            {{ bar2_html|safe }}
+        </div>
+    </div>
+</body>
+</html>
